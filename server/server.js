@@ -11,6 +11,7 @@ app.use(async (ctx, next) => {
     console.log(`${ctx.path}`)
     await next()
   } catch (err) {
+    console.log(err)
     ctx.status = 500
     if (isDev) {
       ctx.body = err.message

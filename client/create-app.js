@@ -10,6 +10,7 @@ import './assets/styles/global.styl'
 
 Vue.use(VueRouter)
 Vue.use(Vuex)
+
 export default () => {
   const router = createRouter()
   const store = createStore()
