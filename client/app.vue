@@ -15,6 +15,9 @@ import Footer from './layout/footer.jsx'
 import Todo from './views/todo/todo.vue'
 
 export default {
+  metaInfo: {
+    title: 'dome'
+  },
   components: {
     Header,
     Footer,
