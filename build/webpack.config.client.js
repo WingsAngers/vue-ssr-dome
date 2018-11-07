@@ -53,7 +53,8 @@ if (isDev) {
     devServer,
     plugins: defaultPluins.concat([    
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoEmitOnErrorsPlugin()
+      new webpack.NoEmitOnErrorsPlugin(),
+      new VueClientPlugin()
     ])
   })
 } else {
