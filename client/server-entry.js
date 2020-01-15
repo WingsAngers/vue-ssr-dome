@@ -1,4 +1,4 @@
-import { createApp } from './create-app'
+import createApp from './create-app'
 
 
 export default context => {
@@ -7,11 +7,12 @@ export default context => {
 
     router.push(context.url)
 
-    router.onRendy(() => {
+    router.onReady(() => {
       const matchedComponents = router.getMatchedComponents()
       if (!matchedComponents.length) {
-        return reject( new Error('no component matched') )
+        return reject(new Error('no component matched'))
       }
+      context.meta = app.$meta()
       resolve(app)
     })
   })

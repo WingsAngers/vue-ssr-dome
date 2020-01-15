@@ -53,13 +53,14 @@ if (isDev) {
     devServer,
     plugins: defaultPluins.concat([    
       new webpack.HotModuleReplacementPlugin(),
-      new webpack.NoEmitOnErrorsPlugin()
+      new webpack.NoEmitOnErrorsPlugin(),
+      new VueClientPlugin()
     ])
   })
 } else {
   config = merge(baseConfig, {
     entry: {
-      app: path.join(__dirname, '../client/index.js'),
+      app: path.join(__dirname, '../client/client-entry.js'),
       vendor: ['vue']
     },
     output: {
